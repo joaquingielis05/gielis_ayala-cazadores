@@ -24,4 +24,14 @@ public class CazadorTest {
 	    assertFalse(profugo.getNervioso());
 	}
 	
+	@Test
+	public void cazadorRuralCapturaProfugoSiTieneMasExperienciaYEsNerviosoYLoAgregaALaListaDeCapturados() {
+	    Cazador cazador = new CazadorRural("Pedro", 60);
+	    Profugo profugo = new Profugo(30, 60, true);
+	    ArrayList<Profugo> capturados = new ArrayList<>();
+	    assertTrue(cazador.puedeCapturar(profugo));
+	    cazador.capturaOIntimida(profugo, capturados);
+	    assertEquals(1,capturados.size());
+	}
+	
 }
