@@ -14,5 +14,16 @@ public class Zona {
 	public void agregarProfugo (Profugo profugo) {
 		this.profugos.add(profugo);
 	}
+
+	public ArrayList<Profugo> getProfugos() {
+		return profugos;
+	}
+
+	public void eliminarCapturados(ArrayList<Profugo> capturados) {
+		this.profugos.removeAll(capturados);
+		
+	}
+	
+	
 	
 }

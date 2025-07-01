@@ -9,6 +9,22 @@ public class CazadorUrbano extends Cazador {
 		this.nombre = nombre;
 		this.experiencia = experiencia;
 	}
+	
+	
+
+	@Override
+	public Integer getExperiencia() {
+		return experiencia;
+	}
+
+
+
+	@Override
+	public void setExperiencia(Integer experiencia) {
+		this.experiencia = experiencia;
+	}
+
+
 
 	@Override
 	public Boolean puedeCapturar(Profugo profugo) {

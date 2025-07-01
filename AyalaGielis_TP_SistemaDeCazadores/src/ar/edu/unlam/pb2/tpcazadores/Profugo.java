@@ -34,4 +34,10 @@ public class Profugo {
 		
 	}
 
+	public Integer getHabilidad() {
+		return habilidad;
+	}
+	
+	
+
 }
