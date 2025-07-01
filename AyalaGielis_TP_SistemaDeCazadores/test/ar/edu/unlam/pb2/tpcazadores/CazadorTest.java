@@ -8,7 +8,7 @@ public class CazadorTest {
 
 	@Test
 	public void test() {
-		fail("prueba de commit");
+		fail("prueba de commit 2");
 	}
 
 }
