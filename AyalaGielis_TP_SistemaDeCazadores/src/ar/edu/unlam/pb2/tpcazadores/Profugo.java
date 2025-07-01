@@ -37,6 +37,16 @@ public class Profugo {
 	public Integer getHabilidad() {
 		return habilidad;
 	}
+
+	public void reducirHabilidad() {
+		if (this.habilidad >=5) {
+			this.habilidad = this.inocencia - 5;
+		}
+		else {
+			this.inocencia = 0;
+		}
+		
+	}
 	
 	
 
