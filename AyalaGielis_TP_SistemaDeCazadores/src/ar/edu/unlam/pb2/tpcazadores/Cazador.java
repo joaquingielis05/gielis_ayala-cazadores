@@ -15,4 +15,12 @@ public abstract class Cazador {
 	}
 
 	public abstract void intimidar(Profugo profugo);
+	
+	public void interactuaZona(Zona zona) {
+		ArrayList<Profugo> capturados new ArrayList<>();
+		ArrayList<Profugo> intimidados new ArrayList<>();
+		for(Profugo profugo: zona.getProfugos()) {
+			
+		}
+	}
 }

@@ -14,5 +14,5 @@ public class Zona {
 	public void agregarProfugo (Profugo profugo) {
 		this.profugos.add(profugo);
 	}
-
+	
 }

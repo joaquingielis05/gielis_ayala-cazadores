@@ -33,5 +33,19 @@ public class CazadorTest {
 	    cazador.capturaOIntimida(profugo, capturados);
 	    assertEquals(1,capturados.size());
 	}
-	
+
+	@Test
+	public void cazadorRuralCapturaEIntimidaEnZonaYActualizaExperiencia() {
+		Cazador cazador = new CazadorRural("Ramiro",50);
+		Zona zona = new Zona("Pampa");
+		Profugo p1 = new profugo(45,70,true);
+		Profugo p2 = new profugo(25,80,true);
+		Profugo p3 = new profugo(60,60,true);
+		Profugo p4 = new profugo(30,50,false);
+		zona.agregarProfugo(p1);
+		zona.agregarProfugo(p2);
+		zona.agregarProfugo(p3);
+		zona.agregarProfugo(p4);
+		cazador.interactuaZona("Pampa");
+	}
 }
