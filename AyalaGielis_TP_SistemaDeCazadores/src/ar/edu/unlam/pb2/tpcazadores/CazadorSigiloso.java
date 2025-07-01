@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.tpcazadorestest;
+package ar.edu.unlam.pb2.tpcazadores;
 
 import ar.edu.unlam.pb2.tpcazadores.Cazador;
 import ar.edu.unlam.pb2.tpcazadores.Profugo;
