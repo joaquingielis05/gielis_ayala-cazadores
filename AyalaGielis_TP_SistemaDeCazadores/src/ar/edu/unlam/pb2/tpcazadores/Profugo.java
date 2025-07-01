@@ -13,12 +13,28 @@ public class Profugo {
 	}
 
 	public Boolean getNervioso() {
-		return nervioso;
+		return this.nervioso;
 	}
 
 	public Integer getInocencia() {
 		return inocencia;
 	}
+
+	public void setNervioso(Boolean nervioso) {
+		this.nervioso = nervioso;
+	}
+
+	public void reducirInocencia() {
+		if (this.inocencia >=2) {
+			this.inocencia = this.inocencia - 2;
+		}
+		else {
+			this.inocencia = 0;
+		}
+		
+	}
+	
+	
 	
 	
 

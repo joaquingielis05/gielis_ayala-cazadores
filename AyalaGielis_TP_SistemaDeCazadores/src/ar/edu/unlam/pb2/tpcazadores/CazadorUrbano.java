@@ -14,7 +14,15 @@ public class CazadorUrbano extends Cazador {
 	public Boolean puedeCapturar(Profugo profugo) {
 		Boolean experienciaEsMayor = this.experiencia > profugo.getInocencia();
 		Boolean profugoEsNervioso = profugo.getNervioso();
-		return experienciaEsMayor && !profugoEsNervioso;
+		return (experienciaEsMayor && !(profugoEsNervioso));
 	}
+
+	@Override
+	public void intimidar(Profugo profugo) {
+		profugo.reducirInocencia();
+		profugo.setNervioso(false);
+	}
+	
+	
 
 }
