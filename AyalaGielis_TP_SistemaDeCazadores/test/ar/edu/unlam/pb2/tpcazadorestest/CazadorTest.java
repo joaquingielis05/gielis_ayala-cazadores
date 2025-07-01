@@ -24,5 +24,4 @@ public class CazadorTest {
 	    assertFalse(profugo.getNervioso());
 	}
 	
-
 }

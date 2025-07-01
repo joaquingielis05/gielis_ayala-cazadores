@@ -23,6 +23,4 @@ public class CazadorUrbano extends Cazador {
 		profugo.setNervioso(false);
 	}
 	
-	
-
 }
