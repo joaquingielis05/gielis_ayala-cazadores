@@ -13,5 +13,22 @@ public class CazadorTest {
 
 	    assertTrue(cazador.puedeCapturar(profugo));
 	}
+	
+	@Test
+	public void cazadorUrbanoNoCapturaProfugoSiTieneMasExperienciaYEsNervioso() {
+	    Cazador cazador = new CazadorUrbano("Juan", 50);
+	    Profugo profugo = new Profugo(30, 60, true); 
 
+	    assertFalse(cazador.puedeCapturar(profugo));
+	    
+	    
+	}
+	
+	@Test
+	public void cazadorRuralCapturaProfugoSiTieneMasExperienciaYnoEsNervioso() {
+	    Cazador cazador = new CazadorUrbano("Juan", 50);
+	    Profugo profugo = new Profugo(30, 60, false); 
+
+	    assertTrue(cazador.puedeCapturar(profugo));
+	}
 }
