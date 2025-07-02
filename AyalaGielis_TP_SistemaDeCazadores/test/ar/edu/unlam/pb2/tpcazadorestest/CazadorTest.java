@@ -54,12 +54,12 @@ public class CazadorTest {
 	}
 	@Test
 	public void cazadorSigilosoCapturaEIntimidaEnZonaYActualizaExperiencia() {
-		Cazador cazador = new CazadorSigiloso("Ramiro",50);
-		Zona zona = new Zona("Pampa");
-		Profugo p1 = new Profugo(45,70,true);
-		Profugo p2 = new Profugo(25,80,true);
-		Profugo p3 = new Profugo(60,30,true);
-		Profugo p4 = new Profugo(30,10,false);
+		Cazador cazador = new CazadorSigiloso("Pablo",50);
+		Zona zona = new Zona("Buenos Aires");
+		Profugo p1 = new Profugo(40,30,true);
+		Profugo p2 = new Profugo(30,15,true);
+		Profugo p3 = new Profugo(60,60,false);
+		Profugo p4 = new Profugo(30,70,false);
 		zona.agregarProfugo(p1);
 		zona.agregarProfugo(p2);
 		zona.agregarProfugo(p3);
@@ -68,6 +68,6 @@ public class CazadorTest {
 		assertEquals(2,zona.getProfugos().size());
 		assertFalse(zona.getProfugos().contains(p1));
 		assertFalse(zona.getProfugos().contains(p2));
-		assertEquals(64, cazador.getExperiencia(),0.001);
+		assertEquals(114, cazador.getExperiencia(),0.001);
 	}
 }
