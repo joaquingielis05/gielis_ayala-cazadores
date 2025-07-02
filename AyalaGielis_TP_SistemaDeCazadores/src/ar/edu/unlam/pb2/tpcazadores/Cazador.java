@@ -20,31 +20,28 @@ public abstract class Cazador {
 	
 	public void interactuaZona(Zona zona) {
 		ArrayList<Profugo> capturados = new ArrayList<>();
-		ArrayList<Profugo> intimidados = new ArrayList<>();
+		ArrayList<Integer> habilidadesIntimidados = new ArrayList<>();
 		for(Profugo profugo: zona.getProfugos()) {
 			if (this.puedeCapturar(profugo)) {
 				capturados.add(profugo);
 			}
 			else {
-				this.intimidar(profugo);
-				intimidados.add(profugo);
+				habilidadesIntimidados.add(profugo.getHabilidad());
+				this.intimidar(profugo);			
 			}
 		}
-			
-			Integer minHabilidad = 0;
-			Boolean primeraVez = true;
-
-			for (Profugo p : intimidados) {
-			    if (primeraVez) {
-			        minHabilidad = p.getHabilidad();
-			        primeraVez = false;
-			    } else if (p.getHabilidad() < minHabilidad) {
-			        minHabilidad = p.getHabilidad();
-			    } 
-			}
+		Integer minHabilidad = 0;
+		Boolean primeraVez = true;
+		for (Integer p : habilidadesIntimidados) {
+		    if (primeraVez) {
+		        minHabilidad = p;
+		        primeraVez = false;
+		    } else if (p < minHabilidad) {
+		        minHabilidad = p;
+		    } 
+		}
 			this.setExperiencia(this.getExperiencia() + minHabilidad + (2 * capturados.size()));
 			zona.eliminarCapturados(capturados);
 		}
 	
-
 }
