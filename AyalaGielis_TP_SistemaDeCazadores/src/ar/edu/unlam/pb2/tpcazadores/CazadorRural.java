@@ -34,8 +34,12 @@ public class CazadorRural extends Cazador{
 
 	@Override
 	public void intimidar(Profugo profugo) {
+		if(!profugo.getProteccionLegal() || (profugo.getProteccionLegal() && profugo.getInocencia()>=42)) {
 		profugo.reducirInocencia();
+		}
+		if (!profugo.getEntrenamientoElite()) {
 		profugo.setNervioso(true);
+		}
 	}
 	
 	

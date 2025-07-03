@@ -17,7 +17,9 @@ public class CazadorSigiloso extends Cazador {
 
 	@Override
 	public void intimidar(Profugo profugo) {
+		if(!profugo.getProteccionLegal() || (profugo.getProteccionLegal() && profugo.getInocencia()>=42)) {
 		profugo.reducirInocencia();
+		}
 		profugo.reducirHabilidad();
 	}
 

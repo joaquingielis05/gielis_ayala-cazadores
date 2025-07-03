@@ -5,6 +5,8 @@ public class Profugo{
 	private Boolean nervioso;
 	private Integer inocencia;
 	private Integer habilidad;
+	private Boolean proteccionLegal = false;
+	private Boolean entrenamientoElite = false;
 
 	public Profugo(Integer inocencia, Integer habilidad, Boolean nervioso) {
 		this.inocencia = inocencia;
@@ -49,12 +51,12 @@ public class Profugo{
 	}
 	public void entrenarArtesMarciales() {
 		if(this.habilidad <= 50) {
-		this.habilidad = this.habilidad * 2;
-			
+		this.habilidad = this.habilidad * 2;	
 		}
 		else {
 			this.habilidad = 100;
 		}
+		
 	}
 	
 	
@@ -62,11 +64,23 @@ public class Profugo{
 		if(this.inocencia < 40) {
 			this.inocencia = 40;
 		}
+		this.proteccionLegal = true;
 		
 	}
 	public void entrenarEntrenamientoElite() {
 		this.nervioso = false;
+		this.entrenamientoElite = true;
 	}
+
+	public Boolean getProteccionLegal() {
+		return proteccionLegal;
+	}
+
+	public Boolean getEntrenamientoElite() {
+		return entrenamientoElite;
+	}
+	
+	
 
 	
 	
