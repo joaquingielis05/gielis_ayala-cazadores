@@ -70,4 +70,16 @@ public class CazadorTest {
 		assertFalse(zona.getProfugos().contains(p2));
 		assertEquals(114, cazador.getExperiencia(),0.001);
 	}
+	@Test
+	public void queUnMismoProfugoPuedaAcumularVariosEntrenamientos() {
+		Profugo profugo = new Profugo(10,30,true);
+		profugo.entrenarArtesMarciales();
+		profugo.entrenarArtesMarciales();
+		profugo.entrenarEntrenamientoElite();
+		profugo.entrenarProteccionLegal():
+		assertEquals(100,profugo.getHabilidad(),0.001);
+		assertEquals(40, profugo.getInocencia(),0.001);
+		assertFalse(profugo.getNervioso());
+		
+	}
 }
