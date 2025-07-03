@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Zona {
 	private String nombre;
-	private ArrayList<ProfugoInterfaz> profugos;
+	private ArrayList<Profugo> profugos;
 	
 	public Zona(String nombre) {
 	this.nombre = nombre;
@@ -15,15 +15,14 @@ public class Zona {
 		this.profugos.add(profugo);
 	}
 
-	public ArrayList<ProfugoInterfaz> getProfugos() {
+	public ArrayList<Profugo> getProfugos() {
 		return profugos;
 	}
 
-	public void eliminarCapturados(ArrayList<ProfugoInterfaz> capturados) {
+	public void eliminarCapturados(ArrayList<Profugo> capturados) {
 		this.profugos.removeAll(capturados);
 		
 	}
 	
 	
-	
-}
+	}

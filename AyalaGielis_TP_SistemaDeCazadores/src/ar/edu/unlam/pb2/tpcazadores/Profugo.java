@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.tpcazadores;
 
-public class Profugo implements ProfugoInterfaz{
+public class Profugo{
 
 	private Boolean nervioso;
 	private Integer inocencia;
@@ -47,6 +47,27 @@ public class Profugo implements ProfugoInterfaz{
 		}
 		
 	}
+	public void entrenarArtesMarciales() {
+		if(this.habilidad <= 50) {
+		this.habilidad = this.habilidad * 2;
+			
+		}
+		else {
+			this.habilidad = 100;
+		}
+	}
+	
+	
+	public void entrenarProteccionLegal() {
+		if(this.inocencia < 40) {
+			this.inocencia = 40;
+		}
+		
+	}
+	public void entrenarEntrenamientoElite() {
+		this.nervioso = false;
+	}
+
 	
 	
 

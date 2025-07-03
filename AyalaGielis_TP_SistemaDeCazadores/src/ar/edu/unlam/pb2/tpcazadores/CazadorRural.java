@@ -26,14 +26,14 @@ public class CazadorRural extends Cazador{
 
 
 	@Override
-	public Boolean puedeCapturar(ProfugoInterfaz profugo) {
+	public Boolean puedeCapturar(Profugo profugo) {
 		Boolean experienciaEsMayor = this.experiencia > profugo.getInocencia();
 		Boolean profugoEsNervioso = profugo.getNervioso();
 		return (experienciaEsMayor && profugoEsNervioso);
 	}
 
 	@Override
-	public void intimidar(ProfugoInterfaz profugo) {
+	public void intimidar(Profugo profugo) {
 		profugo.reducirInocencia();
 		profugo.setNervioso(true);
 	}
