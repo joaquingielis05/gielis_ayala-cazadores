@@ -10,37 +10,35 @@ public class ProfugoConArtesMarciales implements ProfugoInterfaz{
 
 	@Override
 	public Integer getInocencia() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Integer getHabilidad() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Boolean getNervioso() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void reducirInocencia() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void reducirHabilidad() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void setNervioso(Boolean nervioso) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
