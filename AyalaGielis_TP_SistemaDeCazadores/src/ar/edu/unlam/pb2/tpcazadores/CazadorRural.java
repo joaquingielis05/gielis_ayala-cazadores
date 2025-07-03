@@ -9,21 +9,15 @@ public class CazadorRural extends Cazador{
 		this.experiencia = experiencia;
 	}
 	
-	
-
 	@Override
 	public Integer getExperiencia() {
 		return experiencia;
 	}
 
-
-
 	@Override
 	public void setExperiencia(Integer experiencia) {
 		this.experiencia = experiencia;
 	}
-
-
 
 	@Override
 	public Boolean puedeCapturar(Profugo profugo) {
@@ -42,6 +36,4 @@ public class CazadorRural extends Cazador{
 		}
 	}
 	
-	
-
 }

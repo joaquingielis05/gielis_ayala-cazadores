@@ -21,8 +21,6 @@ public class Zona {
 
 	public void eliminarCapturados(ArrayList<Profugo> capturados) {
 		this.profugos.removeAll(capturados);
-		
 	}
-	
 	
 	}

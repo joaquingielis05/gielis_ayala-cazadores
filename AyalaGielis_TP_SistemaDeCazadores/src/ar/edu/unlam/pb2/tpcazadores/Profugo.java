@@ -33,7 +33,6 @@ public class Profugo{
 		else {
 			this.inocencia = 0;
 		}
-		
 	}
 
 	public Integer getHabilidad() {
@@ -47,8 +46,8 @@ public class Profugo{
 		else {
 			this.inocencia = 0;
 		}
-		
 	}
+	
 	public void entrenarArtesMarciales() {
 		if(this.habilidad <= 50) {
 		this.habilidad = this.habilidad * 2;	
@@ -59,14 +58,13 @@ public class Profugo{
 		
 	}
 	
-	
 	public void entrenarProteccionLegal() {
 		if(this.inocencia < 40) {
 			this.inocencia = 40;
 		}
-		this.proteccionLegal = true;
-		
+		this.proteccionLegal = true;	
 	}
+	
 	public void entrenarEntrenamientoElite() {
 		this.nervioso = false;
 		this.entrenamientoElite = true;
@@ -80,9 +78,4 @@ public class Profugo{
 		return entrenamientoElite;
 	}
 	
-	
-
-	
-	
-
 }

@@ -1,7 +1,6 @@
 package ar.edu.unlam.pb2.tpcazadores;
 
 public class CazadorSigiloso extends Cazador {
-
 	private String nombre;
 	private Integer experiencia;
 

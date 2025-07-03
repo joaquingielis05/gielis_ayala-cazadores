@@ -1,7 +1,6 @@
 package ar.edu.unlam.pb2.tpcazadores;
 
 public class CazadorUrbano extends Cazador {
-
 	private String nombre;
 	private Integer experiencia;
 
@@ -10,21 +9,15 @@ public class CazadorUrbano extends Cazador {
 		this.experiencia = experiencia;
 	}
 	
-	
-
 	@Override
 	public Integer getExperiencia() {
 		return experiencia;
 	}
 
-
-
 	@Override
 	public void setExperiencia(Integer experiencia) {
 		this.experiencia = experiencia;
 	}
-
-
 
 	@Override
 	public Boolean puedeCapturar(Profugo profugo) {
