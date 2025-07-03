@@ -11,12 +11,12 @@ public class CazadorSigiloso extends Cazador {
 	}
 
 	@Override
-	public Boolean puedeCapturar(Profugo profugo) {
+	public Boolean puedeCapturar(ProfugoInterfaz profugo) {
 		return this.experiencia > profugo.getInocencia() && profugo.getHabilidad() < 50;
 	}
 
 	@Override
-	public void intimidar(Profugo profugo) {
+	public void intimidar(ProfugoInterfaz profugo) {
 		profugo.reducirInocencia();
 		profugo.reducirHabilidad();
 	}

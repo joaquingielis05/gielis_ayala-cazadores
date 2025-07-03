@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public abstract class Cazador {
 
-	public abstract Boolean puedeCapturar(Profugo profugo);
+	public abstract Boolean puedeCapturar(ProfugoInterfaz profugo);
 	public abstract Integer getExperiencia();
 	public abstract void setExperiencia(Integer experiencia);
 
-	public void capturaOIntimida(Profugo profugo, ArrayList<Profugo> capturados) {
+	public void capturaOIntimida(Profugo profugo, ArrayList<ProfugoInterfaz> capturados) {
 	    if (this.puedeCapturar(profugo)) {
 	        capturados.add(profugo);
 	    } else {
@@ -16,12 +16,12 @@ public abstract class Cazador {
 	    }
 	}
 
-	public abstract void intimidar(Profugo profugo);
+	public abstract void intimidar(ProfugoInterfaz profugo);
 	
 	public void interactuaZona(Zona zona) {
-		ArrayList<Profugo> capturados = new ArrayList<>();
+		ArrayList<ProfugoInterfaz> capturados = new ArrayList<>();
 		ArrayList<Integer> habilidadesIntimidados = new ArrayList<>();
-		for(Profugo profugo: zona.getProfugos()) {
+		for(ProfugoInterfaz profugo: zona.getProfugos()) {
 			if (this.puedeCapturar(profugo)) {
 				capturados.add(profugo);
 			}

@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.tpcazadores;
 
-public class Profugo {
+public class Profugo implements ProfugoInterfaz{
 
 	private Boolean nervioso;
 	private Integer inocencia;
