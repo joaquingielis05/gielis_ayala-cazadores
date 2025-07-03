@@ -76,10 +76,24 @@ public class CazadorTest {
 		profugo.entrenarArtesMarciales();
 		profugo.entrenarArtesMarciales();
 		profugo.entrenarEntrenamientoElite();
-		profugo.entrenarProteccionLegal():
+		profugo.entrenarProteccionLegal();
 		assertEquals(100,profugo.getHabilidad(),0.001);
 		assertEquals(40, profugo.getInocencia(),0.001);
 		assertFalse(profugo.getNervioso());
 		
+	}
+	
+	@Test
+	public void queUnCazadorRuralIntimideAUnProfugoEntrenadoYNoLoPongaNerviosoNiReduzcaSuInocencia() {
+		Cazador cazador = new CazadorRural("Ramiro",50);
+		Zona zona = new Zona("Campo");
+		Profugo p1 = new Profugo(20,30,true);
+		zona.agregarProfugo(p1);
+		p1.entrenarEntrenamientoElite();
+		p1.entrenarProteccionLegal();
+		cazador.interactuaZona(zona);
+		assertEquals(40, p1.getInocencia(),0.001);
+		assertFalse(p1.getNervioso());
+		assertTrue(zona.getProfugos().contains(p1));
 	}
 }
