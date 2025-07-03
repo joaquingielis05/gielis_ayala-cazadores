@@ -55,7 +55,6 @@ public class Profugo{
 		else {
 			this.habilidad = 100;
 		}
-		
 	}
 	
 	public void entrenarProteccionLegal() {
