@@ -8,7 +8,16 @@ public class Profugo{
 	private Boolean proteccionLegal = false;
 	private Boolean entrenamientoElite = false;
 
-	public Profugo(Integer inocencia, Integer habilidad, Boolean nervioso) {
+	public Profugo(Integer inocencia, Integer habilidad, Boolean nervioso) throws DatoInvalidoException{
+		if (inocencia == null || inocencia < 0) {
+			throw new DatoInvalidoException("Inocencia no puede ser negativa ni nula");
+		}
+		if (habilidad == null || habilidad < 0 || habilidad > 100) {
+			throw new DatoInvalidoException("Habilidad no puede ser negativa, mayor a 100 o nula");
+		}
+		if (nervioso == null) {
+			throw new DatoInvalidoException("El estado nervioso no puede ser null");
+		}
 		this.inocencia = inocencia;
 		this.habilidad = habilidad;
 		this.nervioso = nervioso;

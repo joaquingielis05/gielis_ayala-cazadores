@@ -6,7 +6,13 @@ public class CazadorUrbano extends Cazador {
 	private Integer experiencia;
 	private ArrayList<Profugo> profugosCapturados = new ArrayList<>();
 
-	public CazadorUrbano(String nombre, Integer experiencia) {
+	public CazadorUrbano(String nombre, Integer experiencia) throws DatoInvalidoException{
+		if (nombre == null || nombre.trim().isEmpty()) {
+			throw new DatoInvalidoException("Nombre no puede ser vacío o null");
+		}
+		if (experiencia == null || experiencia < 0) {
+			throw new DatoInvalidoException("Experiencia inválida");
+		}
 		this.nombre = nombre;
 		this.experiencia = experiencia;
 	}
