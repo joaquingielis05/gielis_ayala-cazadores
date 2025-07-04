@@ -16,5 +16,14 @@ public class Agencia {
 		}
 		return capturados;
 	}
+	public Profugo obtenerProfugoMasHabilCapturado() {
+        Profugo mejor = null;
+        for (Profugo p : totalProfugosCapturados()) {
+            if (mejor == null || p.getHabilidad() > mejor.getHabilidad()) {
+                mejor = p;
+            }
+        }
+        return mejor;
+    }
 	
 }
