@@ -1,8 +1,10 @@
 package ar.edu.unlam.pb2.tpcazadores;
+import java.util.ArrayList;
 
 public class CazadorUrbano extends Cazador {
 	private String nombre;
 	private Integer experiencia;
+	private ArrayList<Profugo> profugosCapturados = new ArrayList<>();
 
 	public CazadorUrbano(String nombre, Integer experiencia) {
 		this.nombre = nombre;
@@ -32,6 +34,11 @@ public class CazadorUrbano extends Cazador {
 		profugo.reducirInocencia();
 		}
 		profugo.setNervioso(false);
+	}
+
+	@Override
+	public ArrayList<Profugo> getProfugosCapturados() {
+		return profugosCapturados;
 	}
 	
 }

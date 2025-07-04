@@ -1,8 +1,10 @@
 package ar.edu.unlam.pb2.tpcazadores;
+import java.util.ArrayList;
 
 public class CazadorRural extends Cazador{
 	private String nombre;
 	private Integer experiencia;
+	private ArrayList<Profugo> profugosCapturados = new ArrayList<>();
 
 	public CazadorRural(String nombre, Integer experiencia) {
 		this.nombre = nombre;
@@ -18,7 +20,7 @@ public class CazadorRural extends Cazador{
 	public void setExperiencia(Integer experiencia) {
 		this.experiencia = experiencia;
 	}
-
+	
 	@Override
 	public Boolean puedeCapturar(Profugo profugo) {
 		Boolean experienciaEsMayor = this.experiencia > profugo.getInocencia();
@@ -34,6 +36,11 @@ public class CazadorRural extends Cazador{
 		if (!profugo.getEntrenamientoElite()) {
 		profugo.setNervioso(true);
 		}
+	}
+
+	@Override
+	public ArrayList<Profugo> getProfugosCapturados() {
+		return profugosCapturados;
 	}
 	
 }

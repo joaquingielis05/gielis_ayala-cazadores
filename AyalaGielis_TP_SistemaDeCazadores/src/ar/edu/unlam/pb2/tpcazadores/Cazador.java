@@ -1,5 +1,4 @@
 package ar.edu.unlam.pb2.tpcazadores;
-
 import java.util.ArrayList;
 
 public abstract class Cazador {
@@ -7,6 +6,7 @@ public abstract class Cazador {
 	public abstract Boolean puedeCapturar(Profugo profugo);
 	public abstract Integer getExperiencia();
 	public abstract void setExperiencia(Integer experiencia);
+	public abstract ArrayList<Profugo> getProfugosCapturados ();
 
 	public void capturaOIntimida(Profugo profugo, ArrayList<Profugo> capturados) {
 	    if (this.puedeCapturar(profugo)) {
@@ -24,6 +24,7 @@ public abstract class Cazador {
 		for(Profugo profugo: zona.getProfugos()) {
 			if (this.puedeCapturar(profugo)) {
 				capturados.add(profugo);
+				this.getProfugosCapturados().add(profugo);
 			}
 			else {
 				habilidadesIntimidados.add(profugo.getHabilidad());
