@@ -26,4 +26,14 @@ public class Agencia {
         return mejor;
     }
 	
+	public Cazador obtenerCazadorConMasCapturas() {
+        Cazador mejor = null;
+        for (Cazador c : this.cazadores) {
+            if (mejor == null || c.getProfugosCapturados().size()>mejor.getProfugosCapturados().size()) {
+                mejor = c;
+            }
+        }
+        return mejor;
+    }
+	
 }

@@ -146,4 +146,30 @@ public class CazadorTest {
 		cazador3.interactuaZona(zona3);
 		assertEquals(profugo1, agencia.obtenerProfugoMasHabilCapturado());
 	}
+	
+	@Test
+	public void queLaAgenciaRegistreElCazadorConMasCapturas() {
+		Agencia agencia = new Agencia();
+		Cazador cazador1 = new CazadorUrbano("Juan", 50);
+		Cazador cazador2 = new CazadorRural("Pedro", 60);
+		Cazador cazador3 = new CazadorSigiloso("Pablo",50);
+		agencia.agregarCazador(cazador1);
+		agencia.agregarCazador(cazador2);
+		agencia.agregarCazador(cazador3);
+		Zona zona1 = new Zona("Zona Urbana");
+		Profugo profugo1 = new Profugo(30, 60, false); 
+		zona1.agregarProfugo(profugo1);
+		cazador1.interactuaZona(zona1);
+		Zona zona2 = new Zona ("Zona Rural");
+		Profugo profugo2 = new Profugo(30, 50, true);
+		zona2.agregarProfugo(profugo2);
+		cazador2.interactuaZona(zona2);
+		Zona zona3 = new Zona ("Zona sigilosa");
+		Profugo profugo3 = new Profugo(40,30,true);
+		Profugo profugo4 = new Profugo(30,15,true);
+		zona3.agregarProfugo(profugo3);
+		zona3.agregarProfugo(profugo4);
+		cazador3.interactuaZona(zona3);
+		assertEquals(cazador3, agencia.obtenerCazadorConMasCapturas());
+	}
 }

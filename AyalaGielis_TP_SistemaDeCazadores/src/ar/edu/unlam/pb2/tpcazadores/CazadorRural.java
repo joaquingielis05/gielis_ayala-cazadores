@@ -10,7 +10,7 @@ public class CazadorRural extends Cazador{
 		this.nombre = nombre;
 		this.experiencia = experiencia;
 	}
-	
+
 	@Override
 	public Integer getExperiencia() {
 		return experiencia;
