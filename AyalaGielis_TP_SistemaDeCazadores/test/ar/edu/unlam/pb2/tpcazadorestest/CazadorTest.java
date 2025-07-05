@@ -172,4 +172,46 @@ public class CazadorTest {
 		cazador3.interactuaZona(zona3);
 		assertEquals(cazador3, agencia.obtenerCazadorConMasCapturas());
 	}
+	@Test
+	public void queNoSePuedaCrearCazadorOProfugoConDatosInvalidos() {
+		// PROFUGO: inocencia negativa
+		try {
+			new Profugo(-5, 50, true);
+			fail("No debería poder crearse un profugo con inocencia negativa");
+		} catch (DatoInvalidoException e) {
+			assertEquals("Inocencia no puede ser negativa ni nula", e.getMessage());
+		}
+
+		// PROFUGO: habilidad negativa
+		try {
+			new Profugo(10, -1, true);
+			fail("No debería poder crearse un profugo con habilidad negativa");
+		} catch (DatoInvalidoException e) {
+			assertEquals("Habilidad no puede ser negativa ni nula", e.getMessage());
+		}
+
+		// PROFUGO: estado nervioso null
+		try {
+			new Profugo(10, 30, null);
+			fail("No debería poder crearse un profugo con estado nervioso null");
+		} catch (DatoInvalidoException e) {
+			assertEquals("El estado nervioso no puede ser null", e.getMessage());
+		}
+
+		// CAZADOR: nombre vacío
+		try {
+			new CazadorUrbano("   ", 40);
+			fail("No debería poder crearse un cazador con nombre vacío");
+		} catch (DatoInvalidoException e) {
+			assertEquals("Nombre no puede ser vacío o null", e.getMessage());
+		}
+
+		// CAZADOR: experiencia negativa
+		try {
+			new CazadorUrbano("Juan", -10);
+			fail("No debería poder crearse un cazador con experiencia negativa");
+		} catch (DatoInvalidoException e) {
+			assertEquals("Experiencia inválida", e.getMessage());
+		}
+	}
 }
