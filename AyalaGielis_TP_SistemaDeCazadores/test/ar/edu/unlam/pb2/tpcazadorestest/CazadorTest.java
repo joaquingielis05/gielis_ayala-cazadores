@@ -7,14 +7,14 @@ import org.junit.Test;
 
 public class CazadorTest {
 
-	@Test(expected = Exception.class)
+	@Test
 	public void cazadorUrbanoCapturaProfugoSiTieneMasExperienciaYNoEsNervioso() throws DatoInvalidoException {
 	    Cazador cazador = new CazadorUrbano("Juan", 50);
 	    Profugo profugo = new Profugo(30, 60, false); 
 	    assertTrue(cazador.puedeCapturar(profugo));
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void cazadorUrbanoNoCapturaProfugoSiTieneMasExperienciaYEsNerviosoPeroLoIntimida() throws DatoInvalidoException {
 	    Cazador cazador = new CazadorUrbano("Juan", 50);
 	    Profugo profugo = new Profugo(30, 60, true);
@@ -24,7 +24,7 @@ public class CazadorTest {
 	    assertFalse(profugo.getNervioso());
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void cazadorRuralCapturaProfugoSiTieneMasExperienciaYEsNerviosoYLoAgregaALaListaDeCapturados() throws DatoInvalidoException {
 	    Cazador cazador = new CazadorRural("Pedro", 60);
 	    Profugo profugo = new Profugo(30, 60, true);
@@ -34,7 +34,7 @@ public class CazadorTest {
 	    assertEquals(1,capturados.size());
 	}
 
-	@Test(expected = Exception.class)
+	@Test
 	public void cazadorRuralCapturaEIntimidaEnZonaYActualizaExperiencia() throws DatoInvalidoException {
 		Cazador cazador = new CazadorRural("Ramiro",50);
 		Zona zona = new Zona("Pampa");
@@ -53,7 +53,7 @@ public class CazadorTest {
 		assertEquals(64, cazador.getExperiencia(),0.001);
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void cazadorSigilosoCapturaEIntimidaEnZonaYActualizaExperiencia() throws DatoInvalidoException {
 		Cazador cazador = new CazadorSigiloso("Pablo",50);
 		Zona zona = new Zona("Buenos Aires");
@@ -72,7 +72,7 @@ public class CazadorTest {
 		assertEquals(114, cazador.getExperiencia(),0.001);
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void queUnMismoProfugoPuedaAcumularVariosEntrenamientos() throws DatoInvalidoException {
 		Profugo profugo = new Profugo(10,30,true);
 		profugo.entrenarArtesMarciales();
@@ -84,7 +84,7 @@ public class CazadorTest {
 		assertFalse(profugo.getNervioso());
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void queUnCazadorRuralIntimideAUnProfugoEntrenadoYNoLoPongaNerviosoNiReduzcaSuInocencia() throws DatoInvalidoException {
 		Cazador cazador = new CazadorRural("Ramiro",50);
 		Zona zona = new Zona("Campo");
@@ -98,7 +98,7 @@ public class CazadorTest {
 		assertTrue(zona.getProfugos().contains(p1));
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void queLaAgenciaRegistreTodosLosProfugosCapturadosPorSusCazadores() throws DatoInvalidoException {
 		Agencia agencia = new Agencia();
 		Cazador cazador1 = new CazadorUrbano("Juan", 50);
@@ -123,7 +123,7 @@ public class CazadorTest {
 		assertTrue(agencia.totalProfugosCapturados().contains(profugo2));
 		assertTrue(agencia.totalProfugosCapturados().contains(profugo3));
 	}
-	@Test(expected = Exception.class)
+	@Test
 	public void queLaAgenciaRegistreElProfugoMasHabilCapturado() throws DatoInvalidoException {
 		Agencia agencia = new Agencia();
 		Cazador cazador1 = new CazadorUrbano("Juan", 50);
@@ -147,7 +147,7 @@ public class CazadorTest {
 		assertEquals(profugo1, agencia.obtenerProfugoMasHabilCapturado());
 	}
 	
-	@Test(expected = Exception.class)
+	@Test
 	public void queLaAgenciaRegistreElCazadorConMasCapturas() throws DatoInvalidoException {
 		Agencia agencia = new Agencia();
 		Cazador cazador1 = new CazadorUrbano("Juan", 50);
@@ -172,7 +172,7 @@ public class CazadorTest {
 		cazador3.interactuaZona(zona3);
 		assertEquals(cazador3, agencia.obtenerCazadorConMasCapturas());
 	}
-	@Test
+	@Test 
 	public void queNoSePuedaCrearCazadorOProfugoConDatosInvalidos() {
 		// PROFUGO: inocencia negativa
 		try {
