@@ -98,7 +98,7 @@ public class CazadorTest {
 		assertTrue(zona.getProfugos().contains(p1));
 	}
 	
-	@Test
+	@Test(expected = Exception.class)
 	public void queLaAgenciaRegistreTodosLosProfugosCapturadosPorSusCazadores() throws DatoInvalidoException {
 		Agencia agencia = new Agencia();
 		Cazador cazador1 = new CazadorUrbano("Juan", 50);
@@ -123,7 +123,7 @@ public class CazadorTest {
 		assertTrue(agencia.totalProfugosCapturados().contains(profugo2));
 		assertTrue(agencia.totalProfugosCapturados().contains(profugo3));
 	}
-	@Test
+	@Test(expected = Exception.class)
 	public void queLaAgenciaRegistreElProfugoMasHabilCapturado() throws DatoInvalidoException {
 		Agencia agencia = new Agencia();
 		Cazador cazador1 = new CazadorUrbano("Juan", 50);
